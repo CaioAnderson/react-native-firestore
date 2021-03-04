@@ -1,14 +1,17 @@
 import firebase from 'firebase';
 import 'firebase/firestore';
 
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET,
+    MESSAGE_SENDER_ID, APP_ID, MEASUREMENT_ID  } from "@env";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyA9anmLM6MufPYyP3riJIHTiaJ2ENA1_dA",
-    authDomain: "disciplinapidm.firebaseapp.com",
-    projectId: "disciplinapidm",
-    storageBucket: "disciplinapidm.appspot.com",
-    messagingSenderId: "839885909435",
-    appId: "1:839885909435:web:6eab59a5fe1077fea8689e",
-    measurementId: "G-8C3EYMSC9X"
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    projectId: PROJECT_ID,
+    storageBucket: STORAGE_BUCKET,
+    messagingSenderId: MESSAGE_SENDER_ID,
+    appId:  APP_ID,
+    measurementId: MEASUREMENT_ID
 }
 
 let Firebase = firebase.initializeApp(firebaseConfig);

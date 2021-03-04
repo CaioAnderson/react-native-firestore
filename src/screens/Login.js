@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
+import { getUser } from '../api/api';
 
 export default function Login() {
 
@@ -13,7 +14,9 @@ export default function Login() {
         if(id == ''){
             alert('Preencha o campo!')
         }else{
-            await getUser(id);
+            const response = await getUser(id);
+            const { nome, curso, idade } = response;
+            navigation.navigate('Home', { nome, curso, idade })
         }
 
     }
